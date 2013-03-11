@@ -2,7 +2,7 @@
 module Main where
 
 import Control.Applicative ((<$>))
-import Data.Monoid (mappend)
+import Data.Monoid (Monoid(..))
 import Hakyll
 
 
@@ -18,15 +18,29 @@ main = hakyll $ do
 
     match "pages/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+        compile $ do
+          nav <- templateCompiler >>= loadAndApplyTemplate "templates/navigation.html" mempty
+          pandocCompiler
+            >>= loadAndApplyTemplate "templates/default.html"
+                  (constField "navigation" (itemBody nav) `mappend` defaultContext)
+            >>= relativizeUrls
+
+    match "pages/**/*" $ do
+        route $ setExtension "html"
+        compile $ do
+          nav <- templateCompiler >>= loadAndApplyTemplate "templates/navigation.html" mempty
+          pandocCompiler
+            >>= loadAndApplyTemplate "templates/default.html"
+                  (constField "navigation" (itemBody nav) `mappend` defaultContext)
             >>= relativizeUrls
 
     match "index.html" $ do
         route idRoute
         compile $ do
-            getResourceBody
-                >>= loadAndApplyTemplate "templates/default.html" defaultContext
-                >>= relativizeUrls
+          nav <- templateCompiler >>= loadAndApplyTemplate "templates/navigation.html" mempty
+          getResourceBody
+            >>= loadAndApplyTemplate "templates/default.html"
+                  (constField "navigation" (itemBody nav) `mappend` defaultContext)
+            >>= relativizeUrls
 
     match "templates/*" $ compile templateCompiler

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Biegunka :: $title$</title>
+        <title>Biegunka :: $category$</title>
         <link rel="stylesheet" type="text/css" href="/css/default.css" />
         <link rel="stylesheet" type="text/css" href="/css/syntax.css" />
 		<link href='http://fonts.googleapis.com/css?family=Quando' rel='stylesheet' type='text/css'>
@@ -12,26 +12,12 @@
     <body>
         <div id="header">
             <div id="logo">
-                <a href="/"><div id="prelogo">Biegunka ::  </div>$title$</a>
+                <div id="prelogo">Biegunka ::  </div><a href="/pages/$category$">$category$</a>
             </div>
         </div>
 
         <div id="navigation">
-            <a href="/">Home</a><br>
-            <a href="/pages/overview.html">Overview</a><br>
-            <a href="/">Script</a><br>
-            <ul>
-				<li><a href="/">Profiles</a></li>
-				<li><a href="/">Sources</a></li>
-				<li><a href="/">Files</a></li>
-			</ul>
-            <a href="/">Interpreters</a><br>
-            <ul>
-				<li><a href="/">Execute</a></li>
-				<li><a href="/">Pretend</a></li>
-				<li><a href="/">Verify</a></li>
-			</ul>
-            <a href="/">Examples</a><br>
+			$navigation$
         </div>
         <div id="content">
             $body$
