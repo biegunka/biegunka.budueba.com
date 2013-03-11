@@ -20,27 +20,36 @@ main = hakyll $ do
         route $ setExtension "html"
         compile $ do
           nav <- templateCompiler >>= loadAndApplyTemplate "templates/navigation.html" mempty
-          pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html"
-                  (constField "navigation" (itemBody nav) `mappend` defaultContext)
+          val <- pandocCompiler
+          title <- loadAndApplyTemplate "templates/smalltitle.html" defaultContext val
+          loadAndApplyTemplate "templates/default.html"
+            (constField "navigation" (itemBody nav) `mappend`
+             constField "title"      (itemBody title) `mappend`
+             defaultContext) val
             >>= relativizeUrls
 
     match "pages/**/*" $ do
         route $ setExtension "html"
         compile $ do
           nav <- templateCompiler >>= loadAndApplyTemplate "templates/navigation.html" mempty
-          pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html"
-                  (constField "navigation" (itemBody nav) `mappend` defaultContext)
+          val <- pandocCompiler
+          title <- loadAndApplyTemplate "templates/bigtitle.html" defaultContext val
+          loadAndApplyTemplate "templates/default.html"
+            (constField "navigation" (itemBody nav) `mappend`
+             constField "title"      (itemBody title) `mappend`
+             defaultContext) val
             >>= relativizeUrls
 
     match "index.html" $ do
         route idRoute
         compile $ do
           nav <- templateCompiler >>= loadAndApplyTemplate "templates/navigation.html" mempty
-          getResourceBody
-            >>= loadAndApplyTemplate "templates/default.html"
-                  (constField "navigation" (itemBody nav) `mappend` defaultContext)
+          val <- getResourceBody
+          title <- loadAndApplyTemplate "templates/smalltitle.html" defaultContext val
+          loadAndApplyTemplate "templates/default.html"
+            (constField "navigation" (itemBody nav) `mappend`
+             constField "title"      (itemBody title) `mappend`
+             defaultContext) val
             >>= relativizeUrls
 
     match "templates/*" $ compile templateCompiler

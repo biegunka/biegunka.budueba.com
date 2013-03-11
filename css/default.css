@@ -12,6 +12,13 @@ div#header {
 	font-family: Helvetica;
 }
 
+div#logo {
+    color: black;
+    font-size: 30px;
+    font-weight: none;
+    text-decoration: none;
+}
+
 div#logo a {
     color: black;
     font-size: 30px;
