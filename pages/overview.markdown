@@ -1,5 +1,5 @@
 ---
-title: Overview
+category: Overview
 ---
 
 So Biegunka is a library for convenient configuration file management.  
