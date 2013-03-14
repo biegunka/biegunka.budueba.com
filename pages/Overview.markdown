@@ -19,7 +19,7 @@ Generally, you take several steps when using Biegunka:
 
 Now we will walk through simple example which nevertheless shows many Biegunka features. Here is the full code:
 
-``` {.haskell .numberLines startFrom="1"}
+```haskell
 module Main (main) where
 
 import Biegunka
@@ -39,7 +39,7 @@ main = do
 
 Let's start with control line:
 
-``` {.haskell .numberLines startFrom="9"}
+```haskell
   biegunka (set root "~") script (execute id)
 ```
 
@@ -53,7 +53,7 @@ Note on `root`: all paths in Biegunka may be related. They will possibly be rela
 
 
 
-``` {.haskell .numberLines startFrom="11"}
+```haskell
   script = do
     profile "dotfiles" $ do
       git "git@github.com:supki/dotfiles" "git/dotfiles" $ do
