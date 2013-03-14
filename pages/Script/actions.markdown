@@ -1,4 +1,4 @@
 ---
 category: Script
-item: Files
+item: Actions
 ---
