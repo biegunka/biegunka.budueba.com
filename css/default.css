@@ -55,6 +55,19 @@ div#navigation a {
     text-transform: uppercase;
 }
 
+div#up {
+    color: black;
+    font-size: 18px;
+    font-weight: none;
+    margin-left: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+div#subitem a {
+    font-size: 16px;
+}
+
 div#navigation a:hover {
     text-decoration: underline;
 }
