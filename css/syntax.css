@@ -9,7 +9,7 @@ code.sourceCode span.fl { color: #ffffff; }
 code.sourceCode span.ch { color: #dca3a3; }
 code.sourceCode span.st { color: #cc9393; }
 code.sourceCode span.co { color: #ffffff; font-style: italic; }
-code.sourceCode span.ot { color: #ffffff; }
+code.sourceCode span.ot { color: #dcdccc; }
 code.sourceCode span.al { color: red; font-weight: bold; }
 code.sourceCode span.fu { color: #f0efd0; }
 code.sourceCode span.re { }
