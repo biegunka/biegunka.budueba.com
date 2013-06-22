@@ -14,3 +14,6 @@ code.sourceCode span.al { color: red; font-weight: bold; }
 code.sourceCode span.fu { color: #f0efd0; }
 code.sourceCode span.re { }
 code.sourceCode span.er { color: red; font-weight: bold; }
+
+pre.shell { border-radius: 12px; box-shadow: 4px 4px 6px 1px #888; margin: 1em 0em 2em 0em; padding: 1em 0em 1em 1em; background-color: #3f3f3f; color: #dcdccc; width: 100%; line-height: 1.1 }
+pre.shell code { color: #ffffff; background-color: #3f3f3f; border: 0; padding: 0; margin: 0 }

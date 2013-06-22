@@ -64,6 +64,16 @@ div#up {
     text-transform: uppercase;
 }
 
+div#content a {
+    color: black;
+    text-decoration: underline;
+}
+
+div#content a:hover {
+    color: #770000;
+    text-decoration: underline;
+}
+
 div#subitem a {
     font-size: 16px;
 }
