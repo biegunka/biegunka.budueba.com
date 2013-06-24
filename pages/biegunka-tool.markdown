@@ -13,5 +13,14 @@ Before trying to use it, check if you have it in your `PATH`:
 
 Output you'll receive should be similar.
 
+The structure of all biegunka tool subcommands is:
+
+```shell
+% biegunka SUBCOMMAND [OPTIONS] [BIEGUNKAFILE] -- [-GHCOPTIONS] [--SCRIPTOPTIONS]
+```
+
+Note that you can pass commands to ghc (these start with one hyphen) and also
+to script which is ran (those start with two hyphens). Don't forget the `--`, though!
+
 Make sure you also have `makeOptionsParser ''Environments` in your scripts,
 otherwise errors might be intimidating and cryptic.
