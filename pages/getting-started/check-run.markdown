@@ -7,6 +7,7 @@ Check script interpreter outputs `OK` if filesystem state corresponds to what sc
 or failures otherwise. For example, for customized example, before real run:
 
 ```shell
+% biegunka check -- --default
 Verification:
 [localhost] git source (git@github.com:supki/.dotfiles)
             does not exist at /home/maksenov/git/dotfiles
@@ -19,5 +20,6 @@ Verification:
 And after:
 
 ```shell
+% biegunka check -- --default
 Verification: OK
 ```
