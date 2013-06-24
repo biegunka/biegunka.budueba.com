@@ -32,9 +32,9 @@ main :: IO ()
 main = do
   let biegunkaSettings = set root "~"
       execSettings     = set priviledges Drop
-  (environment, run) <- optionsParser
+  (environment, runBiegunka) <- optionsParser
   case environment of
-    Default -> run biegunkaSettings execSettings script
+    Default -> runBiegunka biegunkaSettings execSettings script
 
 script :: Script Profiles ()
 script = do
