@@ -3,6 +3,8 @@ category: Getting started
 item: Setup
 ---
 
+*Make sure you successfully [installed][0] biegunka.*
+
 The first step to use __Biegunka__ is to get sample `Dotfiles.hs`. This file serves a
 purpose of being declarative description of your configuration environment.
 
@@ -44,3 +46,4 @@ script = do
     return ()
   return ()
 ```
+ [0]: /pages/install.html

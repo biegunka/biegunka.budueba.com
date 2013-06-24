@@ -1,6 +1,5 @@
 ---
-category: Getting started
-item: Installation
+category: Installation
 ---
 
 There are several ways to install __Biegunka__:
