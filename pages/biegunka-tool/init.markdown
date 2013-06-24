@@ -12,7 +12,7 @@ Initialized biegunka script at Dotfiles.hs
 Dotfiles.hs
 ```
 
-It also has optional filepath argument to initialize a script somewhere else (with the same content)
+It also has an optional filepath argument to initialize a script somewhere else (with the same content)
 
 ```shell
 % biegunka init AnotherDotfiles.hs

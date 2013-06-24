@@ -12,7 +12,7 @@ Verification:
             /home/maksenov/somewhere/under/~
 ```
 
-It also has an optional filepath argument to check a script somewhere else:
+It also has an optional filepath argument to check a script with non-default name:
 
 ```shell
 % biegunka check AnotherDotfiles.hs -- --default
