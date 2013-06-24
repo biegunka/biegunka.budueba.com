@@ -6,7 +6,7 @@ item: Real run
 Real run script make filesystem look like described in script:
 
 ```shell
-% biegunka run -- --default
+% runhaskell Dotfiles.hs --default --safe-run
 Proceed? [y/N] y
 [localhost] (git@github.com:wikitopian/hardmode) update git source at
               /home/maksenov/.vim/bundle/hardmode
@@ -25,4 +25,4 @@ Proceed? [y/N] y
               /home/maksenov/.xmonad/xmonad.hs
 ```
 
-There is also `--force` flag to skip confirmation
+There is also `--run` flag if you want to skip confirmation

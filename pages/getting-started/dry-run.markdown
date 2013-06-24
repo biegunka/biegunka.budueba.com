@@ -9,7 +9,7 @@ then stats (if anything will change on filesystem):
 For customized example the output would be like the following:
 
 ```shell
-% biegunka run --dry -- --default
+% runhaskell Dotfiles.hs --default --dry-run
 profile dotfiles:
   update git source git@github.com:supki/.dotfiles at
   /home/maksenov/git/dotfiles
