@@ -7,7 +7,7 @@ Real run script make filesystem look like described in script:
 
 ```shell
 % runhaskell Dotfiles.hs --default --safe-run
-Proceed? [y/N] y
+Proceed? [y/n] y
 [localhost] (git@github.com:wikitopian/hardmode) update git source at
               /home/maksenov/.vim/bundle/hardmode
 [localhost] (git@github.com:supki/.dotfiles) update git source at

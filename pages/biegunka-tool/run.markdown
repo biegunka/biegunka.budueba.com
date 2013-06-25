@@ -21,14 +21,14 @@ Only shows what *would* be done, and also statistics
 
 ```shell
 % biegunka run -- --default
-Proceed? [y/N]
+Proceed? [y/n]
 ```
 
 or
 
 ```shell
 % biegunka run --safe -- --default
-Proceed? [y/N]
+Proceed? [y/n]
 ```
 
 ---
