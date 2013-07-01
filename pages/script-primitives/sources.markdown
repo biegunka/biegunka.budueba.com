@@ -3,6 +3,8 @@ category: Script primitives
 item: Sources
 ---
 
+The middle layer in the `Script` hierarchy under [`Actions`][6] and below [`Profiles`][7].
+
 ## Git support
 
 Can be found in [`biegunka-core`][0], supports cloning and updating (with merge)
@@ -48,3 +50,5 @@ Can be found in [`biegunka-archive`][2], support downloading and redownloading o
   [3]: http://biegunka.github.io/biegunka-core/Biegunka-Source-Git.html
   [4]: http://biegunka.github.io/biegunka-darcs/
   [5]: http://biegunka.github.io/biegunka-archive/
+  [6]: /pages/script-primitives/actions.html
+  [7]: /pages/script-primitives/profiles.html

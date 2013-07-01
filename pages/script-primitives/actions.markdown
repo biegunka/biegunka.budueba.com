@@ -3,7 +3,7 @@ category: Script primitives
 item: Actions
 ---
 
-The lower layer in `Script` hierarchy below [`Sources`][0] and [`Profiles`][1].
+The lower layer in the `Script` hierarchy below [`Sources`][0] and [`Profiles`][1].
 
 [Haddocks][2]
 
@@ -55,7 +55,7 @@ Run the default shell command. It will probably run `bash` on most systems.
 ```haskell
 shell :: String -> Script Actions ()
 ```
- [0]: /pages/script-primitives/sources.html
- [1]: /pages/script-primitives/profiles.html
- [2]: http://biegunka.github.io/biegunka-core/Biegunka-Primitive.html#g:2
- [3]: http://hackage.haskell.org/package/HStringTemplate
+  [0]: /pages/script-primitives/sources.html
+  [1]: /pages/script-primitives/profiles.html
+  [2]: http://biegunka.github.io/biegunka-core/Biegunka-Primitive.html#g:2
+  [3]: http://hackage.haskell.org/package/HStringTemplate
