@@ -22,7 +22,7 @@ Link the source to host file system somewhere.
 The filepath is relative to biegunka root.
 
 ```haskell
-registerAt :: FilePath -> Script Actions ()
+register :: FilePath -> Script Actions ()
 ```
 
 ---
