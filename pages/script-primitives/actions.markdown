@@ -48,13 +48,23 @@ substitute :: FilePath -> FilePath -> Script Actions ()
 
 ---
 
-## Misc
+## Running external programs
 
-Run the default shell command. It will probably run `bash` on most systems.
+Run command in the default shell (it will probably be `bash` on most systems).
 
 ```haskell
 shell :: String -> Script Actions ()
 ```
+
+---
+
+Run arbitrary external command.
+
+```haskell
+raw :: FilePath -> [String] -> Script Actions ()
+```
+
+
   [0]: /pages/script-primitives/sources.html
   [1]: /pages/script-primitives/profiles.html
   [2]: http://biegunka.github.io/biegunka-core/Biegunka-Primitive.html#g:2
