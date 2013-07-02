@@ -31,9 +31,14 @@ div#logo a:hover {
 }
 
 div#prelogo {
+	font-family: 'Quando', serif;
     font-size: 30px;
     float: left;
     font-weight: bold;
+}
+
+div#postlogo {
+	font-family: 'Quando', serif;
 }
 
 div#navigation {
