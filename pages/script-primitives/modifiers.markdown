@@ -1,9 +1,10 @@
 ---
 category: Script primitives
-item: Other
+item: Modifiers
 ---
 
-Script primitives which do not belong to a particular layer.
+Script primitives which do not belong to a particular layer but modify
+other primitives in some way.
 
 [Haddocks][0]
 
