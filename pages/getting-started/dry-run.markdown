@@ -10,19 +10,21 @@ For customized example the output would be like the following:
 
 ```shell
 % runhaskell Dotfiles.hs --default --dry-run
-profile dotfiles:
-  update git source git@github.com:supki/.dotfiles at
-  /home/maksenov/git/dotfiles
-    /home/maksenov/.vimrc is a copy of
-    /home/maksenov/git/dotfiles/core/vimrc
-    /home/maksenov/.xmonad/xmonad.hs is a copy of
-    /home/maksenov/git/dotfiles/extended/xmonad.hs
-  update git source git@budueba.com:tools at /home/maksenov/git/tools
-    /home/maksenov/bin/publish-haddocks links to
-    /home/maksenov/git/tools/publish-haddocks.sh
-profile vim:
-  update git source git@github.com:wikitopian/hardmode at
-  /home/maksenov/.vim/bundle/hardmode
+[localhost] (git@github.com:wikitopian/hardmode) update git source at
+              /home/maksenov/.vim/bundle/hardmode
+[localhost] (git@github.com:supki/.dotfiles) update git source at
+              /home/maksenov/git/dotfiles
+[localhost] (git@budueba.com:tools) update git source at
+              /home/maksenov/git/tools
+[localhost] (git@budueba.com:tools) [1/1]
+              link /home/maksenov/bin/publish-haddocks to
+              /home/maksenov/git/tools/publish-haddocks.sh
+[localhost] (git@github.com:supki/.dotfiles) [1/2]
+              copy /home/maksenov/git/dotfiles/core/vimrc to
+              /home/maksenov/.vimrc
+[localhost] (git@github.com:supki/.dotfiles) [2/2]
+              copy /home/maksenov/git/dotfiles/extended/xmonad.hs to
+              /home/maksenov/.xmonad/xmonad.hs
 
 added files (3):
   /home/maksenov/bin/publish-haddocks

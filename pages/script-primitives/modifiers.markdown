@@ -13,7 +13,7 @@ other primitives in some way.
 Use another user's powers to do something:
 
 ```haskell
-sudo :: String -> Script sc () -> Script sc ()
+sudo :: String -> Script s () -> Script s ()
 ```
 
 ```haskell
@@ -44,7 +44,7 @@ Default reaction is to retry one time. You can change that in `Controls`
 but it could be useful to alter default reaction for a specific command too:
 
 ```haskell
-reacting :: React -> Script sc () -> Script sc ()
+reacting :: React -> Script s () -> Script s ()
 ```
 
 ```haskell
@@ -65,8 +65,8 @@ some commands (may be useful if the latter commmand depends on the former),
 you should state that explicitly:
 
 ```haskell
-chain :: Script sc () -> Script sc () -> Script sc ()
-(<~>) :: Script sc () -> Script sc () -> Script sc ()
+chain :: Script s () -> Script s () -> Script s ()
+(<~>) :: Script s () -> Script s () -> Script s ()
 ```
 
 ```haskell
