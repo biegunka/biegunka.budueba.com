@@ -5,11 +5,11 @@ item: Run-only
 
 A bunch of settings for `run` specificatlly.
 
-They are bundled in `Execution` type. Note, that you do not have
+They are bundled in `Run` type. Note, that you do not have
 access to constructors directly, instead you are supposed
 to use [lens][0]es.
 
-  * `priviledges :: Lens' Execution Priviledges`
+  * `priviledges :: Lens' Run Priviledges`
 
     If you run scripts with sudo, you still probably don't want all
     your dotfiles to belong to `root`. That's what `priviledges` allows you to do:
@@ -24,7 +24,7 @@ to use [lens][0]es.
     settings = set priviledges Preserve
     ```
 
-  * `templates :: Lens' Execution Templates   `
+  * `templates :: Lens' Run Templates   `
 
       If you want to use `substitute` primitive, __Biegunka__ must know
     which templates to substitute with what:
@@ -46,7 +46,7 @@ to use [lens][0]es.
     settings = set templates (Values { value1 = 4, value2 = 7 })
     ```
 
-  * `retries :: Lens' Execution Int         `
+  * `retries :: Lens' Run Int         `
 
       If __Biegunka__ encounters some kind of failure while
     doing an operation, it will try to redo it. This sets maximum amount of such retries
@@ -55,7 +55,7 @@ to use [lens][0]es.
     settings = set retries 1 -- default
     ```
 
-  * `react :: Lens' Execution React`
+  * `react :: Lens' Run React`
 
     __Biegunka__ reaction if all retries failed
 
