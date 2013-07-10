@@ -38,7 +38,7 @@ main = do
   case environment of
     Default -> runBiegunka biegunkaSettings runSettings script
 
-script :: Script Profiles ()
+script :: Script Sources ()
 script = do
   profile "my-dotfiles" $ do
     git "git@github.com:user/dotfiles" "somewhere/under/~" $

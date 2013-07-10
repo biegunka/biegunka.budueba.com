@@ -7,7 +7,7 @@ Next, customize sample `Dotfiles.hs` for your repositories you want to have on
 the machine. Do not touch `Environments` or `main` yet but instead concentrate on `script`:
 
 ```haskell
-script :: Script Profiles ()
+script :: Script Sources ()
 script = do
   profile "my-dotfiles" $ do
     git "git@github.com:user/dotfiles" "somewhere/under/~" $
@@ -19,7 +19,7 @@ script = do
 First, we do some renaming and adding our dotfiles repository:
 
 ```haskell
-script :: Script Profiles ()
+script :: Script Sources ()
 script = do
   profile "dotfiles" $ do
     git "git@github.com:supki/.dotfiles" "git/dotfiles" $
@@ -31,7 +31,7 @@ script = do
 After that, we actually want some files from that repository under `~`:
 
 ```haskell
-script :: Script Profiles ()
+script :: Script Sources ()
 script = do
   profile "dotfiles" $ do
     git "git@github.com:supki/.dotfiles" "git/dotfiles" $ do
@@ -44,7 +44,7 @@ script = do
 We also have a repository with useful script and we *love* hardmode for vim, so we'll add them too:
 
 ```haskell
-script :: Script Profiles ()
+script :: Script Sources ()
 script = do
   profile "dotfiles" $ do
     git "git@github.com:supki/.dotfiles" "git/dotfiles" $ do
