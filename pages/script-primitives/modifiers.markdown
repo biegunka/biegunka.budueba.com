@@ -77,6 +77,7 @@ By default, *everything* is executed concurrently. If you want to sequentially e
 some commands before the others you should state that explicitly:
 
 ```haskell
+infixr 7 `prerequisiteOf`, <~>
 prerequisiteOf :: Script Sources a -> Script Sources b -> Script Sources b
 (<~>) :: Script Sources a -> Script Sources b -> Script Sources b
 ```
