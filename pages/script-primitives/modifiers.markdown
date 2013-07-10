@@ -26,7 +26,7 @@ For example, data for "dotfiles" group could be found at `~/.biegunka/profiles/d
 Use another user's powers to do something:
 
 ```haskell
-sudo :: String -> Script s () -> Script s ()
+sudo :: String -> Script s a -> Script s a
 ```
 
 ```haskell
@@ -57,7 +57,7 @@ Default reaction is to retry one time. You can change that in `Controls`
 but it could be useful to alter default reaction for a specific command too:
 
 ```haskell
-reacting :: React -> Script s () -> Script s ()
+reacting :: React -> Script s a -> Script s a
 ```
 
 ```haskell
