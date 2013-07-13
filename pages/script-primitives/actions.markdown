@@ -7,7 +7,7 @@ The lower layer in the `Script` hierarchy below [`Sources`][0].
 
 [Haddocks][2]
 
-##Link
+## Link
 
 Link the file from source to host file system somewhere.
 The first filepath is relative to source root and the second is to biegunka root.
@@ -44,6 +44,19 @@ The first filepath is relative to source root and the second is to biegunka root
 
 ```haskell
 substitute :: FilePath -> FilePath -> Script Actions ()
+```
+
+---
+
+## Patch
+
+Apply patch with given settings to the filepath.
+The first filepath is relative to source root and the second is to biegunka root.
+
+```haskell
+data PatchSpec = PatchSpec { strip :: Int, reversely :: Bool }
+
+patch :: FilePath -> FilePath -> PatchSpec -> Script Actions ()
 ```
 
 ---
