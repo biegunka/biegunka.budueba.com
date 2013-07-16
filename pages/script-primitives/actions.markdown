@@ -29,7 +29,26 @@ register :: FilePath -> Script Actions ()
 
 ## Copy
 
-Copy the file from source to host file system somewhere.
+Copy a regular file from source to the host file system.
+The first filepath is relative to source root and the second is to biegunka root.
+
+```haskell
+copyFile :: FilePath -> FilePath -> Script Actions ()
+```
+
+---
+
+Copy a directory from source to the host file system.
+The first filepath is relative to source root and the second is to biegunka root.
+
+```haskell
+copyDirectory :: FilePath -> FilePath -> Script Actions ()
+```
+
+---
+
+Copy a regular file *or* directory (whatever happens to be on the path)
+from source to the host file system.
 The first filepath is relative to source root and the second is to biegunka root.
 
 ```haskell
