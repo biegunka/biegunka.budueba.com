@@ -3,7 +3,7 @@ category: Script primitives
 item: Sources
 ---
 
-The upper layer in the `Script` hierarchy under [`Actions`][6].
+The upper layer in the `Script` hierarchy above [`Actions`][6].
 
 ## Git support
 
