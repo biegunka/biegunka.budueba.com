@@ -7,7 +7,7 @@ The upper layer in the `Script` hierarchy above [`Actions`][6].
 
 ## Git support
 
-Can be found in [`biegunka-core`][0], supports cloning and updating (with merge)
+Can be found in [`biegunka`][0], supports cloning and updating (with merge)
 
 Some examples:
 
@@ -44,10 +44,10 @@ Can be found in [`biegunka-archive`][2], support downloading and redownloading o
 
 [Haddocks][5]
 
-  [0]: https://github.com/biegunka/biegunka-core
+  [0]: https://github.com/biegunka/biegunka
   [1]: https://github.com/biegunka/biegunka-darcs
   [2]: https://github.com/biegunka/biegunka-archive
-  [3]: http://biegunka.github.io/biegunka-core/Biegunka-Source-Git.html
+  [3]: http://biegunka.github.io/biegunka/Control-Biegunka-Source-Git.html
   [4]: http://biegunka.github.io/biegunka-darcs/
   [5]: http://biegunka.github.io/biegunka-archive/
   [6]: /pages/script-primitives/actions.html

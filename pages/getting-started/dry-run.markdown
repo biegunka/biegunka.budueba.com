@@ -9,7 +9,7 @@ then stats (if anything will change on filesystem):
 For customized example the output would be like the following:
 
 ```shell
-% runhaskell Dotfiles.hs --default --dry-run
+% runhaskell Biegunka.hs --default --dry-run
 [localhost] (git@github.com:wikitopian/hardmode) update git source at
               /home/maksenov/.vim/bundle/hardmode
 [localhost] (git@github.com:supki/.dotfiles) update git source at

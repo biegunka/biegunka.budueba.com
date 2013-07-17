@@ -98,5 +98,5 @@ raw :: FilePath -> [String] -> Script Actions ()
 
 
   [0]: /pages/script-primitives/sources.html
-  [2]: http://biegunka.github.io/biegunka-core/Biegunka-Primitive.html#g:2
+  [2]: http://biegunka.github.io/biegunka/Control-Biegunka-Primitive.html#g:2
   [3]: http://hackage.haskell.org/package/HStringTemplate

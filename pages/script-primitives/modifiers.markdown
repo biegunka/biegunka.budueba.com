@@ -104,4 +104,4 @@ dotfiles = git "git@github.com:supki/.dotfiles" "git/dotfiles" $ do
   ...
 ```
 
-  [0]: http://biegunka.github.io/biegunka-core/Biegunka-Primitive.html#g:3
+  [0]: http://biegunka.github.io/biegunka/Control-Biegunka-Primitive.html#g:3

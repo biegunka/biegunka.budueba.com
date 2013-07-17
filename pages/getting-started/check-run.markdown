@@ -7,7 +7,7 @@ Check script interpreter outputs `OK` if filesystem state corresponds to what sc
 or failures otherwise. For example, for customized example, before real run:
 
 ```shell
-% runhaskell Dotfiles.hs --default --check
+% runhaskell Biegunka.hs --default --check
 Verification:
 [localhost] git source (git@github.com:supki/.dotfiles)
             does not exist at /home/maksenov/git/dotfiles
@@ -20,6 +20,6 @@ Verification:
 And after:
 
 ```shell
-% runhaskell Dotfiles.hs --default --check
+% runhaskell Biegunka.hs --default --check
 Verification: OK
 ```

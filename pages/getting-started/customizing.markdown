@@ -3,7 +3,7 @@ category: Getting started
 item: Customizing
 ---
 
-Next, customize sample `Dotfiles.hs` for your repositories you want to have on
+Next, customize sample `Biegunka.hs` for your repositories you want to have on
 the machine. Do not touch `Environments` or `main` yet but instead concentrate on `script`:
 
 ```haskell

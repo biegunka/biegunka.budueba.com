@@ -6,7 +6,7 @@ item: Real run
 Real run script make the filesystem to look like it's described in the script:
 
 ```shell
-% runhaskell Dotfiles.hs --default
+% runhaskell Biegunka.hs --default
 Proceed? [y/n] y
 [localhost] (git@github.com:wikitopian/hardmode) update git source at
               /home/maksenov/.vim/bundle/hardmode

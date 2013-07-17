@@ -3,7 +3,7 @@ category: Biegunka tool
 item: Check
 ---
 
-`biegunka check` checks current filesystem state against what is written in `Dotfiles.hs`:
+`biegunka check` checks current filesystem state against what is written in `Biegunka.hs`:
 
 ```shell
 % biegunka check -- --default
@@ -15,6 +15,6 @@ Verification:
 It also has an optional filepath argument to check a script with non-default name:
 
 ```shell
-% biegunka check AnotherDotfiles.hs -- --default
+% biegunka check AnotherBiegunka.hs -- --default
 % Verification: OK
 ```

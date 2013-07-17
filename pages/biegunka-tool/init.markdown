@@ -7,18 +7,18 @@ item: Init
 
 ```shell
 % biegunka init
-Initialized biegunka script at Dotfiles.hs
+Initialized biegunka script at Biegunka.hs
 % ls
-Dotfiles.hs
+Biegunka.hs
 ```
 
 It also has an optional filepath argument to initialize a script somewhere else (with the same content)
 
 ```shell
-% biegunka init AnotherDotfiles.hs
-Initialized biegunka script at Dotfiles.hs
+% biegunka init AnotherBiegunka.hs
+Initialized biegunka script at AnotherBiegunka.hs
 % ls
-AnotherDotfiles.hs Dotfiles.hs
-% diff AnotherDotfiles.hs Dotfiles.hs
+AnotherBiegunka.hs Biegunka.hs
+% diff AnotherBiegunka.hs Biegunka.hs
 %
 ```

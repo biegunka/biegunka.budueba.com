@@ -2,7 +2,7 @@
 category: Settings
 ---
 
-Recall initial `Dotfiles.hs` template:
+Recall initial `Biegunka.hs` template:
 
 ```haskell
 main :: IO ()
