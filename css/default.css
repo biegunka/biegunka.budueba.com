@@ -2,7 +2,7 @@ body {
     color: black;
     font-size: 16px;
     margin: 0px auto 0px auto;
-    width: 800px;
+    width: 900px;
 }
 
 div#header {
@@ -121,4 +121,26 @@ code {
 	border: 1px;
 	border-style: solid;
 	border-color: #888;
+}
+
+#index-container {
+	padding-right: 150px;
+}
+
+#index-container .column {
+	position: relative;
+	float: left;
+}
+
+#welcome-text {
+	width: 90%;
+}
+
+#linked-pictures {
+	width: 100px;
+	margin-right: -100px;
+}
+
+#github-avatar {
+	height: 200px;
 }
