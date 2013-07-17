@@ -3,7 +3,7 @@ category: Settings
 item: Run-only
 ---
 
-A bunch of settings for `run` specificatlly.
+A bunch of settings for `run` specifically.
 
 They are bundled in `Run` type. Note, that you do not have
 access to constructors directly, instead you are supposed
