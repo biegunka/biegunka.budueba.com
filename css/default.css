@@ -48,7 +48,7 @@ div#navigation {
 
 div#content {
     margin-left: 180px;
-	line-height: 1.3
+	line-height: 1.3;
 }
 
 div#navigation a {
@@ -144,4 +144,23 @@ code {
 #github-avatar {
 	padding-top: 20px;
 	height: 200px;
+	padding-bottom: 10px;
+}
+
+#footer {
+	clear: both;
+    width: 900px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+#footer a {
+    color: black;
+    font-weight: none;
+    text-decoration: underline;
+}
+
+#footer a:hover {
+    color: #770000;
+    text-decoration: underline;
 }
