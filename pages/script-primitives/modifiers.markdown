@@ -26,10 +26,26 @@ For example, data for "dotfiles" group could be found at `~/.biegunka/profiles/d
 Use another user's powers to do something:
 
 ```haskell
-sudo :: String -> Script s a -> Script s a
+data User = UserID Int | Username String
+
+sudo :: User -> Script s a -> Script s a
 ```
 
 ```haskell
+dotfiles :: Script Sources ()
+dotfiles = git "git@github.com:supki/.dotfiles" "git/dotfiles" $ do
+  ...
+  sudo (UserID 0) $ link "profile" "/etc/profile"
+  sudo (Username "root") $ link "zprofile" "/etc/zprofile"
+  ...
+```
+
+`User` also has `IsString` instance, so you can use string literals
+directly with `-XOverloadedStrings` enabled:
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+
 dotfiles :: Script Sources ()
 dotfiles = git "git@github.com:supki/.dotfiles" "git/dotfiles" $ do
   ...
@@ -37,17 +53,17 @@ dotfiles = git "git@github.com:supki/.dotfiles" "git/dotfiles" $ do
   ...
 ```
 
-Works for any layer, just in case:
+All this works for both layers, just in case:
 
 ```haskell
 root_dotfiles :: Script Sources ()
-root_dotfiles = sudo "root" $ 
+root_dotfiles = sudo (Username "root") $
   git "git@github.com:supki/secret-dotfiles" "/root/dotfiles" $ do
     ...
 ```
 
-Using `sudo` generally implies you are running script with `sudo` command too; all
-priviledges are just dropped for script commands which are not explicitly under `sudo`
+Using `sudo` generally implies you are running script with `sudo` command too.
+Do not expect anything to work otherwise.
 
 ---
 
