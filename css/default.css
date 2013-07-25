@@ -42,6 +42,7 @@ div#postlogo {
 }
 
 div#navigation {
+    margin-left: -5px;
     text-align: left;
     float: left;
 }
