@@ -40,22 +40,6 @@ to use [lens][0]es.
     settings = set retries 1 -- default
     ```
 
-  * `react :: Lens' Run React`
-
-    __Biegunka__ reaction if all retries failed
-
-    Just ignore that particular operation failure and move on:
-
-    ```haskell
-    settings = set react Ignorant -- default
-    ```
-
-    or halt task run:
-
-    ```haskell
-    settings = set react Abortive
-    ```
-
 And of course you can compose settings, for example:
 
 ```haskell
