@@ -40,10 +40,4 @@ to use [lens][0]es.
     settings = set retries 1 -- default
     ```
 
-And of course you can compose settings, for example:
-
-```haskell
-settings = set retries 1 . set react Ignorant
-```
-
   [0]: https://github.com/ekmett/lens
