@@ -143,9 +143,11 @@ code {
 }
 
 #github-avatar {
-	padding-top: 20px;
+	margin-top: 20px;
 	height: 200px;
-	padding-bottom: 10px;
+	width: 200px;
+	margin-bottom: 10px;
+	border: 1px solid black;
 }
 
 #footer {
