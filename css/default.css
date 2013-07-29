@@ -1,8 +1,8 @@
 body {
     color: black;
-    font-size: 16px;
-    margin: 0px auto 0px auto;
-    width: 900px;
+    font-size: 14px;
+    padding-left: 40px;
+    width: 75%;
 }
 
 div#header {
@@ -14,14 +14,14 @@ div#header {
 
 div#logo {
     color: black;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: none;
     text-decoration: none;
 }
 
 div#logo a {
     color: black;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: none;
     text-decoration: none;
 }
@@ -32,7 +32,7 @@ div#logo a:hover {
 
 div#prelogo {
 	font-family: 'Quando', serif;
-    font-size: 30px;
+    font-size: 24px;
     float: left;
     font-weight: bold;
 }
@@ -54,7 +54,7 @@ div#content {
 
 div#navigation a {
     color: black;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: none;
     margin-left: 12px;
     text-decoration: none;
@@ -63,7 +63,7 @@ div#navigation a {
 
 div#up {
     color: black;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: none;
     margin-left: 12px;
     text-decoration: none;
@@ -81,7 +81,7 @@ div#content a:hover {
 }
 
 div#subitem a {
-    font-size: 16px;
+    font-size: 12px;
 }
 
 div#navigation a:hover {
