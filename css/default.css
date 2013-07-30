@@ -142,6 +142,13 @@ code {
 	margin-right: -100px;
 }
 
+#github-ribbon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+}
+
 #github-avatar {
 	margin-top: 20px;
 	height: 200px;
