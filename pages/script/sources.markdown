@@ -1,5 +1,5 @@
 ---
-category: Script primitives
+category: Script
 item: Sources
 ---
 
