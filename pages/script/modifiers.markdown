@@ -4,7 +4,7 @@ item: Modifiers
 ---
 
 Script primitives which do not belong to a particular layer but modify
-other primitives in some way.
+others in some way.
 
 [Haddocks][0]
 
@@ -67,10 +67,24 @@ Do not expect anything to work otherwise.
 
 ---
 
+##Change retries count
+
+Before falling back to "failure reaction" (how to change it is described
+below), __Biegunka__ will try to retry an action, associated with term
+`n` times. By default `n` is 1. (That protects against accidential failures
+fairly well.)
+
+```haskell
+retries :: Int -> Script s a -> Script s a
+```
+
+---
+
 ##Change failure reaction
 
-Default reaction is to retry one time. You can change that in `Controls`
-but it could be useful to alter default reaction for a specific command too:
+Default reaction depends on scope: for `Actions` it's to ignore the failure and proceed,
+for `Sources` though it's to stop processing failed source. `reacting` allows to change that
+behaviour (note, that it changes it for both scopes).
 
 ```haskell
 reacting :: React -> Script s a -> Script s a
