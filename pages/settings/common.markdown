@@ -31,7 +31,7 @@ to use [lens][0]es.
     settings = set root "~/.biegunka" -- default
     ```
 
-  * `templates :: Lens' Run Templates   `
+  * `templates :: Lens' (Settings a) Templates   `
 
       If you want to use `substitute` primitive, __Biegunka__ must know
     which templates to substitute with what:
