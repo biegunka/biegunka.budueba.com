@@ -33,10 +33,9 @@ makeOptionsParser ''Environments
 main :: IO ()
 main = do
   let biegunkaSettings = set root "~"
-      runSettings      = set priviledges Drop
   (environment, runBiegunka) <- optionsParser
   case environment of
-    Default -> runBiegunka biegunkaSettings runSettings script
+    Default -> runBiegunka biegunkaSettings script
 
 script :: Script Sources ()
 script = do
