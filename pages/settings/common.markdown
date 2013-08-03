@@ -31,6 +31,28 @@ to use [lens][0]es.
     settings = set root "~/.biegunka" -- default
     ```
 
+  * `templates :: Lens' Run Templates   `
+
+      If you want to use `substitute` primitive, __Biegunka__ must know
+    which templates to substitute with what:
+
+    ```haskell
+    settings = set templates () -- default
+    ```
+
+    or
+
+    ```haskell
+    {-# LANGUAGE DeriveDataTypeable #-}
+    import Data.Data (Data)
+    import Data.Typeable (Typeable)
+
+    data Values = Values { value1, value2 :: Int }
+      deriving (Data, Typeable)
+
+    settings = set templates (Values { value1 = 4, value2 = 7 })
+    ```
+
   * `colors :: Lens' (Settings a) ColorScheme`
 
     ```haskell
