@@ -8,7 +8,7 @@ Recall initial `Biegunka.hs` template:
 main :: IO ()
 main = do
   let biegunkaSettings = set root "~"
-  (environment, runBiegunka) <- optionsParser
+  (environment, runBiegunka) <- options
   case environment of
     Default -> runBiegunka biegunkaSettings script
 ```

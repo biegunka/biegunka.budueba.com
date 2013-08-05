@@ -32,12 +32,12 @@ import Control.Lens
 
 data Environments = Default
 
-makeOptionsParser ''Environments
+biegunkaOptions ''Environments
 
 main :: IO ()
 main = do
   let biegunkaSettings = set root "~"
-  (environment, runBiegunka) <- optionsParser
+  (environment, runBiegunka) <- options
   case environment of
     Default -> runBiegunka biegunkaSettings script
 
