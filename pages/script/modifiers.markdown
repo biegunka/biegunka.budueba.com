@@ -10,16 +10,35 @@ others in some way.
 
 ##Grouping
 
-Grouping is convenience thing aimed at separation of concerns. These are aliases:
+Grouping is aimed to separating unrelated sources, so management becomes easier.
+
+Each group has a name (an arbitrary sequence of characters). Groups can also have
+*subgroups* (i.e. grouping can be nested), for example:
 
 ```haskell
-profile :: String -> Script Sources a -> Script Sources a
-group :: String -> Script Sources a -> Script Sources a
+script =
+  group "foo" $ do
+    ...
+    group "bar" $ do
+      ...
+    group "baz" $ do
+      ...
 ```
 
-Each group/profile information is stored after a real run under `appData` directory.
-For example, data for "dotfiles" group could be found at `~/.biegunka/profiles/dotfiles.profile` if
-`appData` has default value
+will create 3 groups: `foo`, `foo/bar`, and `foo/baz`.
+
+If you don't use named groups all the stuff goes to `` (yeah, the name is empty) group.
+
+Groups data can be found under `~/.biegunka/groups` (assuming default settings)
+though you really want to use `biegunka list` tool if you happen to want convenient interface.
+
+All of these are aliases:
+
+```haskell
+group   :: String -> Script Sources a -> Script Sources a
+profile :: String -> Script Sources a -> Script Sources a
+role    :: String -> Script Sources a -> Script Sources a
+```
 
 ##Change user
 
@@ -28,20 +47,11 @@ Use another user's powers to do something:
 ```haskell
 data User = UserID Int | Username String
 
+instance Num      User where ...
+instance IsString User where ...
+
 sudo :: User -> Script s a -> Script s a
 ```
-
-```haskell
-dotfiles :: Script Sources ()
-dotfiles = git "git@github.com:supki/.dotfiles" "git/dotfiles" $ do
-  ...
-  sudo (UserID 0) $ link "profile" "/etc/profile"
-  sudo (Username "root") $ link "zprofile" "/etc/zprofile"
-  ...
-```
-
-`User` also has `IsString` instance, so you can use string literals
-directly with `-XOverloadedStrings` enabled:
 
 ```haskell
 {-# LANGUAGE OverloadedStrings #-}
@@ -49,21 +59,17 @@ directly with `-XOverloadedStrings` enabled:
 dotfiles :: Script Sources ()
 dotfiles = git "git@github.com:supki/.dotfiles" "git/dotfiles" $ do
   ...
+  sudo      0 $ link "profile"  "/etc/profile"
   sudo "root" $ link "zprofile" "/etc/zprofile"
   ...
 ```
 
-All this works for both layers, just in case:
+*Note:* Sinse __Biegunka__ tries to run as many commands concurrently as it
+possibly can, using `sudo` may result a weird order of things. Still
+it should not ignore `isPrerequisiteOf`/`<~>` directives.
 
-```haskell
-root_dotfiles :: Script Sources ()
-root_dotfiles = sudo (Username "root") $
-  git "git@github.com:supki/secret-dotfiles" "/root/dotfiles" $ do
-    ...
-```
-
-Using `sudo` generally implies you are running script with `sudo` command too.
-Do not expect anything to work otherwise.
+*Note:* Using `sudo` generally implies you are running script
+under `sudo`/`su` command too.
 
 ---
 
