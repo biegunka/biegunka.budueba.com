@@ -11,15 +11,10 @@ purpose of being declarative description of your configuration environment.
 To get it, simply run
 
 ```shell
-% mkdir ~/biegunka
-% biegunka
-% biegunka init biegunka/Biegunka.hs
+% mkdir biegunka
+% biegunka init biegunka
 Initialized biegunka script at biegunka/Biegunka.hs
 ```
-
-*Note*: `biegunka init` without arguments will create `Biegunka.hs` file in the
-current directory
-
 
 Generated `Biegunka.hs` should look like the following (modulo comments)
 
