@@ -3,22 +3,24 @@ category: Biegunka tool
 item: Init
 ---
 
-`biegunka init` initializes default (sample) __Biegunka__ script in current directory:
+`biegunka init` initializes default (sample) __Biegunka__ script in the current directory:
 
 ```shell
 % biegunka init
 Initialized biegunka script at Biegunka.hs
-% ls
-Biegunka.hs
 ```
 
-It also has an optional filepath argument to initialize a script somewhere else (with the same content)
+It has optional filepath argument, and is smart enough to figure out what you want in most cases:
 
 ```shell
-% biegunka init AnotherBiegunka.hs
-Initialized biegunka script at AnotherBiegunka.hs
-% ls
-AnotherBiegunka.hs Biegunka.hs
-% diff AnotherBiegunka.hs Biegunka.hs
-%
+% biegunka init Foo.hs
+Initialized biegunka script at Foo.hs
+
+# assuming Foo is an existing directory
+% biegunka init Foo/
+Initialized biegunka script at Foo/Biegunka.hs
+
+# assuming Foo is an existing directory
+% biegunka init Foo/Bar.hs
+Initialized biegunka script at Foo/Bar.hs
 ```
