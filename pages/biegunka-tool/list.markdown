@@ -3,29 +3,42 @@ category: Biegunka tool
 item: List
 ---
 
-`biegunka list` shows saved __Biegunka__ state
+`biegunka list` shows saved __Biegunka__ groups data
 
-If it's ran without any arguments it will show available profiles (sorted alphabetically):
+If it's ran without any arguments it will show all available data:
 
 ```shell
 % biegunka list
-dotfiles
-tools
+Group dotfiles
+  Source /home/maksenov/git/dotfiles
+    Link /home/maksenov/.XCompose
+    ...
+Group tools
+  Source /home/maksenov/git/tools
+    ...
 ...
 ```
 
-If you want detailed information about profiles use their names as arguments:
+If you can use arguments to filter data to be shown:
 
 ```shell
-% biegunka list dotfiles tools
-Profile dotfiles
-  Source /home/maksenov/git/dotfiles
-    ...
-    Link /home/maksenov/.vimrc
-    ...
-Profile tools
+% biegunka list tools
+Group tools
   Source /home/maksenov/git/tools
     ...
+```
+
+(It does still show all subgroups)
+
+```shell
+% biegunka list vim
+Group vim/coq
+  ...
+Group vim/haskell
+  ...
+Group vim/ruby
+  ...
+...
 ```
 
 ## Custom data directory
@@ -34,13 +47,13 @@ Profile tools
 
 ```shell
 % biegunka list --data-dir=~/.biegunka-experimental
-vim/haskell
-vim/ruby
+Group experimental
+  ...
 ```
 
 The default data directory is `~/.biegunka`
 
-## Formatting
+## Custom formatting
 
 `biegunka list` supports custom formatting:
 
@@ -66,4 +79,41 @@ Format pattern consists of 3 sections, separated by `%;`:
 
 Also `%n` is interpreted as `\n` character.
 
-The default format pattern is `Profile %p%n%;  Source %p%n%;    %T %p%n`
+The default format pattern is `Group %p%n%;  Source %p%n%;    %T %p%n`
+
+## JSON
+
+`biegunka list` can output data as JSON:
+
+```shell
+% biegunka list vim/coq --json
+{"groups":{"vim/coq":{"sources": ...
+```
+
+Yeah, the output is not pretty, but there is enough tools that can transform JSON to a format that
+is nice to read for humans.
+
+The scheme is as follows:
+
+```JSON
+{ "groups":
+	{ <GROUP>:
+		{ "sources":
+			[ { "files":
+					[ { "path": <TARGET>
+					  , "from": <SOURCE>
+					  , "type": <TYPE>
+					  }
+					, ...
+					]
+			  , "path": <TARGET>
+			  , "from": <SOURCE>
+			  , "type": <TYPE>
+			  }
+			, ...
+			]
+		}
+	, ...
+	}
+}
+```
