@@ -3,6 +3,14 @@ category: Biegunka tool
 item: Run
 ---
 
+```shell
+   ___  _                    __
+  / _ )(_)__ ___ ___ _____  / /_____ _
+ / _  / / -_) _ `/ // / _ \/  '_/ _ `/
+/____/_/\__/\_, /\_,_/_//_/_/\_\\_,_/  0.2
+           /___/
+```
+
 `biegunka run` provides options to run (in several ways) __Biegunka__ script
 
 ---
@@ -21,14 +29,12 @@ Only shows what *would* be done, and also statistics
 
 ```shell
 % biegunka run -- --default
-Proceed? [y/n]
 ```
 
 or
 
 ```shell
 % biegunka run --safe -- --default
-Proceed? [y/n]
 ```
 
 ---
