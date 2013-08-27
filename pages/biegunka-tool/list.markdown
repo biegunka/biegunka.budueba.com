@@ -72,14 +72,14 @@ Format pattern consists of 3 sections, separated by `%;`:
   * Profiles information format. Understands `%p` placeholder as profile name.
 
   * Sources information format. Understands `%p` placeholder as
-      source path on host, `%l` as source location and `%t` as source type.
+      source path on host, `%l` as source location, `%u` as source owner, and `%t` as source type.
 
   * Files information format. Understands `%p` placeholder as
-      file path on host, `%l` as file source location and `%t`(`%T`) as file (capitalized) type.
+      file path on host, `%l` as file source location, `%u` as file owner, and `%t`(`%T`) as file (capitalized) type.
 
 Also `%n` is interpreted as `\n` character.
 
-The default format pattern is `Group %p%n%;  Source %p%n%;    %T %p%n`
+The default format pattern is `Group %p%n%;  Source %p owned by %u%n%;    %T %p owned by %u%n`
 
 ## JSON
 
@@ -103,12 +103,14 @@ The scheme is as follows:
 					[ { "path": <TARGET>
 					  , "from": <SOURCE>
 					  , "type": <TYPE>
+			          , "user": <USER>
 					  }
 					, ...
 					]
 			  , "path": <TARGET>
 			  , "from": <SOURCE>
 			  , "type": <TYPE>
+			  , "user": <USER>
 			  }
 			, ...
 			]
