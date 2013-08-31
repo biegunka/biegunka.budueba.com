@@ -103,7 +103,7 @@ The scheme is as follows:
 					[ { "path": <TARGET>
 					  , "from": <SOURCE>
 					  , "type": <TYPE>
-			          , "user": <USER>
+					  , "user": <USER>
 					  }
 					, ...
 					]
