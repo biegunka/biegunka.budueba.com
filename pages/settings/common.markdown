@@ -65,6 +65,23 @@ to use [lens][0]es.
     settings = set colors noColors
     ```
 
+  * `mode :: Lens' (Settings a) Mode`
+
+    Sets __Biegunka__ execution mode.
+
+    ```haskell
+    settings = set mode Online -- default
+    ```
+
+	or
+
+    ```haskell
+    settings = set mode Offline
+    ```
+
+	Offline mode skips sources updates entirely, so you can focus on testing local
+	configuration if they are annoyingly long.
+
 And of course you can compose settings, for example:
 
 ```haskell
