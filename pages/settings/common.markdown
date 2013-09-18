@@ -9,38 +9,48 @@ They are bundled in `Settings a` type. Note, that you do not have
 access to constructors directly, instead you are supposed
 to use [lens][0]es.
 
-  * `root :: Lens' (Settings a) FilePath`
+  * Set root path
 
-    The path against which (almost) all others relative paths will be resolved
+    Root path is the path against which `Sources` and `Actions`
+    targets relative paths are resolved. `Actions` sources relative
+    paths are resolved against `Sources` locations.
+
+    Modifiable with `root :: Lens' (Settings a) FilePath`
+
 
     ```haskell
     settings = set root "~" -- default
     ```
 
-	Or, if you mess with system files too, this would be sensible:
+    Or, if you mess with system files too, this would be useful:
 
     ```haskell
     settings = set root "/"
     ```
 
-  * `appData :: Lens' (Settings a) FilePath`
+  * Set application data directory path
 
-    The path where __Biegunka__ looks for saved data
+    This path is where __Biegunka__ looks for saved data about
+    installed `Sources` and relevant files
+
+    Modifiable with `appData :: Lens' (Settings a) FilePath`
 
     ```haskell
     settings = set root "~/.biegunka" -- default
     ```
 
-  * `templates :: Lens' (Settings a) Templates   `
+  * Templates mappings
 
-      If you want to use `substitute` primitive, __Biegunka__ must know
-    which templates to substitute with what:
+    If you want to use `substitute` primitive, you must tell __Biegunka__
+    which templates to substitute with what, i.e. substitution mapping.
+
+    Modifiable with `templates :: Lens' (Settings a) Templates   `
 
     ```haskell
     settings = set templates () -- default
     ```
 
-    or
+    or (this adds [HStringTemplate][1] mapping for `$templates.value1$` and `$templates.value2$`):
 
     ```haskell
     {-# LANGUAGE DeriveDataTypeable #-}
@@ -50,37 +60,41 @@ to use [lens][0]es.
     data Values = Values { value1, value2 :: Int }
       deriving (Data, Typeable)
 
-    settings = set templates (Values { value1 = 4, value2 = 7 })
+    settings = set templates (hStringTemplate (Values { value1 = 4, value2 = 7 }))
     ```
 
-  * `colors :: Lens' (Settings a) ColorScheme`
+  * Custom colorscheme
+
+    Modifiable with `colors :: Lens' (Settings a) ColorScheme`
 
     ```haskell
     settings = set colors def -- default
     ```
 
-	Or, if you do not like colors:
+    or, in case you do not like colors,
 
     ```haskell
     settings = set colors noColors
     ```
 
-  * `mode :: Lens' (Settings a) Mode`
+  * Execution mode
 
-    Sets __Biegunka__ execution mode.
+    __Biegunka__ execution supports `Online` (the default) and `Offline` modes.
+    `Online` is just what you can assume about execution.  `Offline` mode
+	is a bit different: it skips sources updates entirely, so you can focus on
+	testing your local configuration when updating is annoyingly long.
+
+    Modifiable with `mode :: Lens' (Settings a) Mode`
 
     ```haskell
     settings = set mode Online -- default
     ```
 
-	or
+    or
 
     ```haskell
     settings = set mode Offline
     ```
-
-	Offline mode skips sources updates entirely, so you can focus on testing local
-	configuration if they are annoyingly long.
 
 And of course you can compose settings, for example:
 
@@ -88,4 +102,5 @@ And of course you can compose settings, for example:
 settings = set root "~" . set appData "~/.biegunka"
 ```
 
-  [0]: https://github.com/ekmett/lens
+  [0]: http://hackage.haskell.org/package/lens
+  [1]: http://hackage.haskell.org/package/HStringTemplate
