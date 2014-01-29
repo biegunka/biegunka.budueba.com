@@ -1,6 +1,6 @@
 ---
 category: Biegunka tool
-item: Run
+item: run
 ---
 
 ```shell
@@ -11,58 +11,11 @@ item: Run
            /___/
 ```
 
-`biegunka run` provides options to run (in several ways) __Biegunka__ script
+`biegunka run` is a proxy for a `Biegunka.hs` script.
 
----
-
-## Dry run
-
-```shell
-% biegunka run --dry -- --default
+```
+biegunka run [FILEPATH] -- [OPTIONS]
 ```
 
-Only shows what *would* be done, and also statistics
-
----
-
-## Safe run [default]
-
-```shell
-% biegunka run -- --default
-```
-
-or
-
-```shell
-% biegunka run --safe -- --default
-```
-
----
-
-## Forced run
-
-Does not ask for confirmation
-
-```shell
-% biegunka run --force -- --default
-```
-
----
-
-## Full run
-
-```shell
-% biegunka run --full -- --default
-```
-
-is the equivalent of
-
-```shell
-% biegunka run --dry -- --default
-% biegunka run --safe -- --default
-% biegunka check -- --default
-```
-
----
-
-It also has an optional filepath argument to run a script with non-default name
+Why would you need it? It provides some convenience, for instance, it automatically finds `cabal-dev`
+and `cabal` sandboxes using simple heuristic.
