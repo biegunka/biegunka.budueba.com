@@ -3,8 +3,8 @@ category: Getting started
 item: Customizing
 ---
 
-Next, customize sample `Biegunka.hs` for your repositories you want to have on
-the machine. Do not touch `Environments` or `main` yet but instead concentrate on `script`:
+Next, we customize the sample `Biegunka.hs` for repositories that we want to have on
+our machine. We do not touch `Environments` or `main` yet but instead concentrate on `script`:
 
 ```haskell
 script :: Script Sources ()
@@ -16,19 +16,17 @@ script = do
   return ()
 ```
 
-First, we do some renaming and adding our dotfiles repository:
+First, we do some renaming and add our dotfiles repository:
 
 ```haskell
 script :: Script Sources ()
-script = do
-  profile "dotfiles" $ do
+script =
+  profile "dotfiles" $
     git "git@github.com:supki/.dotfiles" "git/dotfiles" $
       return ()
-    return ()
-  return ()
 ```
 
-After that, we actually want some files from that repository under `~`:
+After that, we actually want to copy files from dotfiles repository in `~`:
 
 ```haskell
 script :: Script Sources ()
@@ -41,7 +39,7 @@ script = do
   return ()
 ```
 
-We also have a repository with useful script and we *love* hardmode for vim, so we'll add them too:
+We also have a repository with useful little scripts and we *love* hardmode for vim, so we'll add them too:
 
 ```haskell
 script :: Script Sources ()

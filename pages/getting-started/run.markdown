@@ -1,9 +1,9 @@
 ---
 category: Getting started
-item: Real run
+item: Run
 ---
 
-Real run script make the filesystem to look like it's described in the script:
+When we `--run` script we observe the `--changes`:
 
 ```shell
 % runhaskell Biegunka.hs --default
@@ -25,4 +25,4 @@ Proceed? [y/n] y
               /home/maksenov/.xmonad/xmonad.hs
 ```
 
-There is also `--run` flag if you want to skip confirmation
+There is also the `--force` flag to skip confirmation step

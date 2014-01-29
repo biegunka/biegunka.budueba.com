@@ -1,13 +1,15 @@
 ---
 category: Getting started
-item: Check run
+item: Problems
 ---
 
-Check script interpreter outputs `OK` if filesystem state corresponds to what script has
-or failures otherwise. For example, for customized example, before real run:
+If we run `Biegunka.hs` script with the `--problems` option, it will tell us how the system
+differ from what's declared in the script.
+
+Suppose we ran `Biegunka.hs` script with `--problems` before we ran it with `--run`:
 
 ```shell
-% runhaskell Biegunka.hs --default --check
+% runhaskell Biegunka.hs --default --problems:
 Verification:
 [localhost] git source (git@github.com:supki/.dotfiles)
             does not exist at /home/maksenov/git/dotfiles
@@ -17,9 +19,9 @@ Verification:
             does not exist at /home/maksenov/.vim/bundle/hardmode
 ```
 
-And after:
+After `--run` finished, nothing broken should be found:
 
 ```shell
-% runhaskell Biegunka.hs --default --check
+% runhaskell Biegunka.hs --default --problems
 Verification: OK
 ```

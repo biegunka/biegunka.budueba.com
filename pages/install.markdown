@@ -4,13 +4,9 @@ category: Installation
 
 There are several ways to install __Biegunka__:
 
-  * From [`hackage`][0] (currently not available)
+  * ~~From [`hackage`][0]~~ (currently not available)
 
-    ```shell
-	% cabal install biegunka
-	```
-
-  * From [`git` repository][1]
+  * From the [`git` repository][1]
 
     ```shell
 	% git clone https://github.com/biegunka/biegunka.git
@@ -20,28 +16,24 @@ There are several ways to install __Biegunka__:
 
 After successful installation you should have:
 
-  * `biegunka` library
+  * The `biegunka` library
 
     ```shell
 	% ghc -e 'import Control.Biegunka'
 	%
 	```
 
-  * `biegunka` tool
+  * The `biegunka` tool
 
     ```shell
 	% which biegunka
 	/home/maksenov/.cabal/bin/biegunka
 	```
 
-	(Do not forget to add `~/.cabal/bin/` directory to `$PATH`)
+	(Do not forget to check `~/.cabal/bin/` directory is in the `$PATH`)
 
-__Note__: it is highly recommended to use a tool ([`cabal-dev`][2]/[`hsenv`][3]/[`cabal` HEAD][4])
-which provides sandboxes: `biegunka` has a whole lot of dependencies,
-you probably do not want to install all of them into your default package database.
+__Note__: it is highly recommended to use a [`cabal`][4] sandboxes: `biegunka` has a whole lot of dependencies, you probably do not want to install all of them into your default package database.
 
   [0]: http://hackage.haskell.org/package/biegunka
-  [1]: https://github.com/biegunka/biegunka.git
-  [2]: https://github.com/creswick/cabal-dev
-  [3]: https://github.com/tmhedberg/hsenv
+  [1]: https://github.com/biegunka/biegunka
   [4]: https://github.com/haskell/cabal

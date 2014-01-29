@@ -20,19 +20,17 @@ Generated `Biegunka.hs` should look like the following (modulo comments)
 
 ```haskell
 {-# LANGUAGE DataKinds #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveDataTypeable #-}
 import Control.Biegunka
 import Control.Biegunka.Source.Git
 import Control.Lens
 
-data Environments = Default
-
-biegunkaOptions ''Environments
+data Environments = Default deriving (Typeable, Data)
 
 main :: IO ()
 main = do
   let biegunkaSettings = set root "~"
-  (environment, runBiegunka) <- options
+  (environment, runBiegunka) <- options [Default]
   case environment of
     Default -> runBiegunka biegunkaSettings script
 
