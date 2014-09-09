@@ -50,4 +50,4 @@ Can be found in [`biegunka-archive`][2], support downloading and redownloading o
   [3]: http://biegunka.github.io/biegunka/Control-Biegunka-Source-Git.html
   [4]: http://biegunka.github.io/biegunka-darcs/
   [5]: http://biegunka.github.io/biegunka-archive/
-  [6]: /pages/script-primitives/actions.html
+  [6]: /pages/script/actions.html
